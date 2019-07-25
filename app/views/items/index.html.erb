@@ -16,6 +16,9 @@
     <td><%= item.age %></td>
     <td><%= item.address %></td>
     <td><%= item.remark %></td>
+    <td><%= link_to '詳細',item_path(item.id) %></td>
+    <td><%= link_to '編集',edit_item_path(item.id) %></td>
+    <td><%= link_to '削除',item_path(item.id),method: :delete %></td>
   </tr>
   <% end %>
 </table>
