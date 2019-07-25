@@ -23,7 +23,6 @@ class ItemsController < ApplicationController
   end
 
   def edit
-    2.times {@item.stations.build}
   end
 
   def update
@@ -46,10 +45,6 @@ class ItemsController < ApplicationController
   end
 
   def item_params
-    params.require(:item).permit(:name,:price,:age,:address,:remark,stations_attributes: [:name,:line,:distance,:item_id,:_destroy])
-  end
-
-  def update_item_params
-    params.require(:item).permit(:name,:price,:age,:address,:remark,stations_attributes: [:name,:line,:distance,:item_id,:_destroy])
+    params.require(:item).permit(:name,:price,:age,:address,:remark,stations_attributes: [:name,:line,:distance,:id,:_destroy])
   end
 end

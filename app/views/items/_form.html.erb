@@ -41,8 +41,15 @@
           <p><%= m.label :distance, "徒歩分数" %></p>
           <%= m.text_field :distance %>
         </div>
+
+          <% if item.persisted? %>
+            <div class="item_group">
+              <%= m.label :_destroy %>
+            </div>
+          <% end %>
         <% end %>
       <% end %>
 
   <%= f.submit '作成する' %>
 <% end %>
+<%= link_to '一覧へ戻る',root_path %>
