@@ -1,0 +1,50 @@
+<h1>登録</h1>
+<h3>登録物件</h3>
+<%= form_for @item do |f| %>
+  <div class='item_group'>
+    <p><%= f.label :name, "物件名" %></p>
+    <%= f.text_field :name, class: 'form-control' %>
+  </div>
+
+  <div class='item_group'>
+    <p><%= f.label :price, "家賃" %></p>
+    <%= f.number_field :price, class: 'form-control' %>
+  </div>
+
+  <div class='item_group'>
+    <p><%= f.label :age, "築年数" %></p>
+    <%= f.number_field :age, class: 'form-control' %>
+  </div>
+
+  <div class='item_group'>
+    <p><%= f.label :address, "住所" %></p>
+    <%= f.text_field :address, class: 'form-control' %>
+  </div>
+
+  <div class='item_group'>
+    <p><%= f.label :remark, "備考" %></p>
+    <%= f.text_area :remark,row:2 %>
+  </div>
+  <hr>
+      <% @item.stations.each_with_index do |station, index| %>
+        <%= f.fields_for :station do |m| %>
+        <h3>最寄り駅情報<%= index + 1 %></h3>
+        <div class="item_group">
+          <p><%= m.label :name, "最寄駅" %></p>
+          <%= m.text_field :name %>
+        </div>
+
+        <div class="item_group">
+          <p><%= m.label :line, "路線名" %></p>
+          <%= m.text_field :line %>
+        </div>
+
+        <div class="item_group">
+          <p><%= m.label :distance, "徒歩分数" %></p>
+          <%= m.text_field :distance %>
+        </div>
+        <% end %>
+      <% end %>
+
+  <%= f.submit '作成する' %>
+<% end %>
