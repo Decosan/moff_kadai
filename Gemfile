@@ -39,6 +39,13 @@ group :development do
   # Access an IRB console on exception pages or by using <%= console %> anywhere in the code.
   gem 'web-console'
   gem 'listen', '~> 3.0.5'
+  gem 'better_errors' # render better error page
+  gem 'binding_of_caller' # use irb on better_errors
+  gem 'pry-rails' # use binding.pry
+  gem 'pry-byebug' # use step over on binding.pry
+  # gem 'pry-doc' # extend pry document support
+  gem 'rubocop'
+  gem 'rails_best_practices'
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'

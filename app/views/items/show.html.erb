@@ -1,0 +1,27 @@
+<h1>閲覧</h1>
+
+<p>物件名：<%= @item.name %></p>
+
+<p>賃料：<%= @item.price %>円</p>
+
+<p>住所：<%= @item.address %></p>
+
+<p>築年数：<%= @item.age %>年</p>
+
+<p>備考：<%= @item.remark %></p>
+
+<hr>
+
+<% @item.stations.each_with_index do |station, index| %>
+
+<h4>最寄り駅<%= index +1 %></h4>
+
+<p>路線名：<%= station.line %></p>
+
+<p>駅名：<%= station.name %></p>
+
+<p>徒歩：<%= station.distance %>分</p>
+
+<% end %>
+
+<%= link_to '一覧へ戻る',root_path %>
